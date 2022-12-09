@@ -1,13 +1,136 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(245, 245, 245);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 1000px;
+  border: 0;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  background-color: grey;
+}
+
+table {
+  display: table;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: clamp(30px, 500px, 50%);
+}
+
+table > thead th {
+  background-color: white;
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+  border-bottom: 1px solid lightgray;
+  max-height: 20px;
+}
+
+table > tbody tr {
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+table > tbody tr:hover {
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+table > tbody td {
+  padding: 0.5rem;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box.responsive {
+  flex-direction: row;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .box.responsive {
+    flex-direction: column;
+  }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.details_title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.details_title::after {
+  content: attr(data-tenure);
+  font-size: 0.65rem;
+  color: white;
+  padding: 0.4rem 1rem;
+  background-color: rgba(81, 171, 169);
+  border-radius: 1000px;
+}
+
+.details_title[data-tenure="Freehold"]::after {
+  background-color: rgba(81, 171, 169);
+}
+
+.details_title[data-tenure="Leasehold"]::after {
+  background-color: lightslategray;
+}
+
+.map {
+  flex: auto;
+  justify-content: center;
+}
+
+.map > div {
+  border-radius: 10px;
+  width: 90%;
+  height: clamp(100px, 30vh, 500px);
+  position: relative;
+  overflow: hidden;
 }

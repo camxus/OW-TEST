@@ -1,0 +1,20 @@
+{
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@assets/*": ["src/@core/assets/*"],
+      "@layouts/*": ["src/@core/layouts/*"],
+      "@store/*": ["src/redux/*"],
+      "@styles/*": ["src/@core/scss/*"],
+      "@configs/*": ["src/configs/*"],
+      "@hooks/*": ["./src/utility/hooks/*"],
+      "@utils": ["./src/utility/Utils"],
+      "@pages/*": ["./src/pages/*"],
+      "@components/*": ["./src/orbitalwitness/components/*"],
+      "@api/*": ["./src/orbitalwitness/api/*"],
+      "@css/*": ["./src/assets/css/*"]
+    }
+  }
+}
